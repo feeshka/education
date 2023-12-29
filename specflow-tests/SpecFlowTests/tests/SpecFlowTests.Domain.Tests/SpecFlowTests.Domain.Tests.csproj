@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="RandomDataGenerator.Net" Version="1.0.17" />
+    <PackageReference Include="SpecFlow.Plus.LivingDocPlugin" Version="3.9.57" />
+    <PackageReference Include="SpecFlow.xUnit" Version="3.9.74" />
+    <PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />
+    <PackageReference Include="xunit" Version="2.6.4" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.5.6">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="FluentAssertions" Version="6.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Drivers\" />
+    <Folder Include="Support\" />
+  </ItemGroup>
+
+  <Target Name="CleanSpecFlowFeatureCodeBehindFiles" AfterTargets="Clean">
+      <ItemGroup>
+          <FilesToDelete Include="**\*.feature.cs" />
+      </ItemGroup>
+      <Message Text="Delete SpecFlow feature code behind files on cleanup:" />
+      <Message Text="%(FilesToDelete.Identity)" />
+      <Delete Files="@(FilesToDelete)">
+          <Output TaskParameter="DeletedFiles" ItemName="FilesDeleted" />
+      </Delete>
+      <Message Text="Files deleted:" />
+      <Message Text="%(FilesDeleted.Identity)" />
+  </Target>
+
+  <ItemGroup>
+    <Using Include="TechTalk.SpecFlow" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\sources\SpecFlowTests.Domain\SpecFlowTests.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

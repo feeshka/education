@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SpecFlowTests.Common\SpecFlowTests.Common.csproj" />
+    <ProjectReference Include="..\SpecFlowTests.Domain.Types\SpecFlowTests.Domain.Types.csproj" />
+  </ItemGroup>
+
+</Project>

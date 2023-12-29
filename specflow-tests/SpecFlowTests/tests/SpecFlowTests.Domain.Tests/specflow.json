@@ -1,0 +1,19 @@
+{
+  "$schema": "https://specflow.org/specflow-config.json",
+  "bindingCulture": {
+    "name": "ru-RU"
+  },
+  "language": {
+    "feature": "ru-RU"
+  },
+  "runtime": {
+    "missingOrPendingStepsOutcome": "Inconclusive",
+    "stopAtFirstError": true
+  },
+  "generator": {
+    "allowDebugGeneratedFiles": true
+  },
+  "trace": {
+    "traceTimings": true
+  }
+}
