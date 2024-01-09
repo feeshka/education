@@ -11,6 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 		global.json = global.json
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpecFlowTests.Domain.Types", "sources\SpecFlowTests.Domain.Types\SpecFlowTests.Domain.Types.csproj", "{C9B49F21-3DFA-4C48-AED9-A26665E94484}"
