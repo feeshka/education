@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <Target Name="CleanSpecFlowFeatureCodeBehindFiles" AfterTargets="Clean">
+      <ItemGroup>
+          <FilesToDelete Include="**\*.feature.cs"/>
+      </ItemGroup>
+      <Message Text="Delete SpecFlow feature code behind files on cleanup:"/>
+      <Message Text="%(FilesToDelete.Identity)"/>
+      <Delete Files="@(FilesToDelete)">
+          <Output TaskParameter="DeletedFiles" ItemName="FilesDeleted"/>
+      </Delete>
+      <Message Text="Files deleted:"/>
+      <Message Text="%(FilesDeleted.Identity)"/>
+  </Target>
+
+</Project>
