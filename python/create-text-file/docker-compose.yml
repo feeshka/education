@@ -1,0 +1,17 @@
+version: '3.1'
+
+x-default: &default-options
+  networks:
+    - create-file-network
+
+services:
+  py-create-text-file:
+    <<: *default-options
+    restart: "no"
+    hostname: py-create-text-file
+    build: .
+    volumes:
+      - ./data:/usr/app
+
+networks:
+  create-file-network:
